@@ -1,100 +1,81 @@
-# Taller práctico #1 - Optimización de la Atención al Cliente en una Empresa de E-commerce
-# EcoAssist AI – Sistema de Atención al Cliente con RAG
+# EcoAssist AI Pro – Sistema de Atención al Cliente con RAG
 
-## Descripción del proyecto
+## Descripción
+EcoAssist AI Pro es una propuesta de solución basada en IA generativa para optimizar la atención al cliente de **EcoMarket**, una empresa de e-commerce sostenible que enfrenta un alto volumen de consultas repetitivas y tiempos de respuesta promedio de 24 horas. El caso del taller indica que el 80% de las consultas son repetitivas y el 20% restante requiere atención humana por su complejidad o necesidad de empatía. fileciteturn1file0L4-L13
 
-EcoAssist AI es una solución basada en Inteligencia Artificial Generativa que utiliza una arquitectura **Retrieval Augmented Generation (RAG)** para optimizar el servicio de atención al cliente en la empresa EcoMarket.
-
-El sistema permite automatizar la atención de consultas frecuentes, mejorar los tiempos de respuesta y garantizar respuestas precisas basadas en información real.
+La solución propuesta utiliza una arquitectura **LLM + RAG (Retrieval Augmented Generation)** para responder con información contextualizada a partir de una base de conocimiento empresarial, manteniendo la escalabilidad, la trazabilidad y el control de la información.
 
 ---
 
-## Problema
-
-EcoMarket enfrenta:
-
-* Alto volumen de consultas
-* 80% de preguntas repetitivas
-* Tiempo de respuesta promedio de 24 horas
-* Baja satisfacción del cliente
+## Objetivo
+Diseñar una solución de IA generativa que acelere y mejore la calidad de las respuestas en el servicio de atención al cliente de EcoMarket, cumpliendo las tres fases del taller: selección y justificación del modelo, análisis crítico de fortalezas/limitaciones/riesgos éticos, e implementación de prompts efectivos. El taller exige precisamente esas tres fases y la entrega mediante un repositorio de GitHub. fileciteturn1file0L15-L24 fileciteturn1file0L32-L35
 
 ---
 
-## Solución propuesta
+## Arquitectura propuesta
 
-Se implementa un sistema basado en:
-
-* Modelo de Lenguaje (LLM)
-* Sistema RAG (recuperación de información)
-* Base de datos de pedidos
-
-El sistema responde automáticamente consultas como:
-
-* Estado de pedidos
-* Procesos de devolución
-* Información de productos
-
----
-
-## Arquitectura
-
-```plaintext
-Usuario → Chatbot → LLM → RAG → Base de datos → Respuesta
+```text
+Cliente -> Interfaz (Chat/Web) -> Router de intención -> Retriever -> Base de conocimiento
+                                                    -> LLM -> Respuesta final
+                                                    -> Escalamiento humano si aplica
 ```
 
+### Componentes
+- **Interfaz conversacional**: recibe consultas por chat.
+- **Router de intención**: clasifica si la consulta puede resolverse automáticamente o si debe escalarse.
+- **Retriever**: busca información relevante en pedidos, políticas y catálogo.
+- **Base de conocimiento**: pedidos, devoluciones, preguntas frecuentes y políticas.
+- **LLM**: redacta respuestas naturales, claras y consistentes.
+- **Escalamiento humano**: atiende quejas, reclamos sensibles y casos ambiguos.
+
 ---
 
-## Estructura del proyecto
+## Estructura del repositorio
 
-```plaintext
-ecoassist-rag/
+```text
+ecoassist-rag-pro/
+├── README.md
+├── requirements.txt
 ├── fase1.md
 ├── fase2.md
 ├── fase3.md
-├── src/
+├── .env.example
 ├── data/
+│   ├── pedidos.json
+│   ├── politicas.json
+│   └── faq.json
+├── src/
+│   ├── rag_core.py
+│   ├── prompts.py
+│   ├── app_streamlit.py
+│   └── demo_cli.py
 └── notebooks/
+    └── demo.ipynb
 ```
 
 ---
 
-## Cómo ejecutar
+## Ejecución rápida
 
-1. Clonar repositorio:
-
-```bash
-git clone https://github.com/tu-usuario/ecoassist-rag.git
-cd ecoassist-rag
-```
-
-2. Instalar dependencias:
-
+### 1) Crear entorno e instalar dependencias
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Ejecutar simulación:
-
+### 2) Ejecutar demo por consola
 ```bash
-python src/rag_simulation.py
+python src/demo_cli.py
+```
+
+### 3) Ejecutar interfaz web
+```bash
+streamlit run src/app_streamlit.py
 ```
 
 ---
 
-## Ejemplo de uso
-
-```python
-generar_respuesta_pedido("12347")
-```
-
----
-
-## Consideraciones éticas
-
-* Protección de datos del usuario
-* Mitigación de sesgos
-* Supervisión humana
-* Transparencia del sistema
+## Nota técnica
+Esta versión incluye una simulación funcional de RAG local basada en recuperación por coincidencia semántica simple. También deja preparada una estructura para evolucionar a una versión conectada a un LLM real mediante API.
 
 ---
 
