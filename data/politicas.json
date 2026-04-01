@@ -1,0 +1,14 @@
+{
+  "devoluciones": {
+    "dias_maximos": 30,
+    "categorias_no_permitidas": ["perecederos", "higiene"],
+    "estado_requerido": ["sin uso", "cerrado", "en buen estado"],
+    "pasos": [
+      "Solicitar la devolución en la plataforma o por chat.",
+      "Adjuntar número de pedido y motivo de la devolución.",
+      "Empacar el producto en su empaque original, si aplica.",
+      "Esperar la guía de recolección o instrucciones de envío.",
+      "Recibir confirmación de revisión y posterior reembolso o cambio."
+    ]
+  }
+}

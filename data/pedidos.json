@@ -1,0 +1,12 @@
+[
+  {"id": "12345", "cliente": "Laura Méndez", "estado": "En tránsito", "fecha_estimada": "2026-04-05", "tracking_url": "https://tracking.ecomarket.com/12345"},
+  {"id": "12346", "cliente": "Carlos Ruiz", "estado": "Entregado", "fecha_estimada": "2026-04-01", "tracking_url": "https://tracking.ecomarket.com/12346"},
+  {"id": "12347", "cliente": "Ana Torres", "estado": "Retrasado", "fecha_estimada": "2026-04-10", "tracking_url": "https://tracking.ecomarket.com/12347"},
+  {"id": "12348", "cliente": "Miguel Castro", "estado": "Procesando", "fecha_estimada": "2026-04-06", "tracking_url": "https://tracking.ecomarket.com/12348"},
+  {"id": "12349", "cliente": "Paula Gómez", "estado": "En tránsito", "fecha_estimada": "2026-04-07", "tracking_url": "https://tracking.ecomarket.com/12349"},
+  {"id": "12350", "cliente": "Andrés Silva", "estado": "Cancelado", "fecha_estimada": "N/A", "tracking_url": "N/A"},
+  {"id": "12351", "cliente": "Sofía Rojas", "estado": "Entregado", "fecha_estimada": "2026-03-30", "tracking_url": "https://tracking.ecomarket.com/12351"},
+  {"id": "12352", "cliente": "Diana Pardo", "estado": "En tránsito", "fecha_estimada": "2026-04-08", "tracking_url": "https://tracking.ecomarket.com/12352"},
+  {"id": "12353", "cliente": "Felipe Mora", "estado": "Retrasado", "fecha_estimada": "2026-04-12", "tracking_url": "https://tracking.ecomarket.com/12353"},
+  {"id": "12354", "cliente": "Juliana Vélez", "estado": "Procesando", "fecha_estimada": "2026-04-09", "tracking_url": "https://tracking.ecomarket.com/12354"}
+]
